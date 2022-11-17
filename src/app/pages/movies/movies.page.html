@@ -6,7 +6,9 @@
 
 <ion-content>
   <ion-list>
-    <ion-item button *ngFor="let item of movies" style="margin-block: 1rem">
+    <ion-item button *ngFor="let item of movies"
+              style="margin-block: 1rem"
+              [routerLink]="[item.id]">
       <ion-avatar slot="start">
         <img [src]="imageBaseURL + '/w92' + item.poster_path" alt="">
       </ion-avatar>
