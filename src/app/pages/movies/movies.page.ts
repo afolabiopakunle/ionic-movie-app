@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiResult, MovieService } from '../../services/movie.service';
 import { LoadingController } from '@ionic/angular';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-movies',
@@ -11,7 +12,9 @@ export class MoviesPage implements OnInit {
 
   // movies$? = this.movieService.movies$;
   movies = [];
-  currentPage = 1;
+  currentPage = 1
+  imageBaseURL = environment.images;
+
   constructor(private movieService: MovieService, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
